@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>hello</p>
+  <script>
+    const target = document.querySelector("p");
+    const txtColor = target.style.color; // 현재 style 정보
+    target.style.color = 'red';
+    target.style.fontWeight = "bold";
+
+    target.style.color = null; // 초기화
+  </script>
+</body>
+
+</html>

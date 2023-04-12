@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>실습 Toggle</title>
+  <style>
+    div {
+      background: black;
+      width: 500px;
+      height: 500px;
+      margin: auto;
+    }
+
+    ul {
+      width: 500px;
+      margin: 50px auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .red {
+      background: red;
+    }
+
+    .yellow {
+      background: yellow;
+    }
+
+    .green {
+      background: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="canvas"></div>
+  <ul>
+    <li><button class="btn btn-red red">빨강</button></li>
+    <li><button class="btn btn-yellow yellow">노랑</button></li>
+    <li><button class="btn btn-green green">초록</button></li>
+  </ul>
+
+  <script>
+    const canvas = document.querySelector(".canvas");
+    const red = document.querySelector(".btn-red");
+    const yellow = document.querySelector(".btn-yellow");
+    const green = document.querySelector(".btn-green");
+
+    // toggle은 껐다켰다 할 수 있지만, CSS의 적혀있는 순서에 따라서 마지막 green이 toggle on된 상태에서 red를 On 하면 red가 안보인다.
+    //  style로 제어하면 click될 때만 바뀌기 때문에 CSS Cascading과 상관없지만 누르고 끌 수는 없어서 기본의 black컬러로는 돌아갈 수가 없다.
+
+    // 🤔 그럼 어떻게 하는게 좋을까?..
+
+    red.addEventListener("click", () => {
+      canvas.classList.toggle("red");
+      // canvas.style.backgroundColor = "";
+      // canvas.style.backgroundColor = "red";
+    })
+
+    yellow.addEventListener("click", () => {
+      canvas.classList.toggle("yellow");
+      // canvas.style.backgroundColor = "";
+      // canvas.style.backgroundColor = "yellow";
+    })
+
+    green.addEventListener("click", () => {
+      canvas.classList.toggle("green");
+      // canvas.style.backgroundColor = "";
+      // canvas.style.backgroundColor = "green";
+    })
+
+    // 📌 미현님 코드
+    // 반복문으로 줄이기
+    // 하지만 동일하게 cascading이 작동
+    // const canvas = document.querySelector("div");
+    // const colorBtn = document.querySelectorAll("button");
+
+    // for (let i = 0; i < colorBtn.length; i++) {
+    //   colorBtn[i].addEventListener('click', function () {
+    //     canvas.classList.toggle(colorBtn[i].className.slice(4));
+    //   })
+    // }
+
+
+    // 📌 동섭님 코드
+    // NodeList는 배열이 아니지만 배열 메소드가 가능한 것이 있다.
+    // const box = document.querySelector('.canvas')
+    // const btn = document.querySelectorAll('.btn')
+    // btn.forEach(btn => {
+    //   console.log('work')
+    //   btn.addEventListener('click', e => {
+    //     box.classList.remove('red')
+    //     box.classList.remove('green')
+    //     box.classList.remove('yellow')
+    //     if (e.currentTarget.classList.contains('red')) {
+    //       box.classList.add('red')
+    //     } else if (e.currentTarget.classList.contains('yellow')) {
+    //       box.classList.add('yellow')
+    //     } else {
+    //       box.classList.add('green')
+    //     }
+    //   })
+    // })
+
+    // 📌 재영님 코드
+    // const box = document.querySelector(".canvas");
+    // const btn = document.querySelectorAll("button")
+    // btn.forEach(a => a.addEventListener('click', function () {
+    //   box.className = ''
+    //   box.classList.add(a.className)
+    // }))
+
+  </script>
+</body>
+
+</html>

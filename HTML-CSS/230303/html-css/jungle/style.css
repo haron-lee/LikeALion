@@ -1,0 +1,38 @@
+/* reset */
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+body,
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* layout */
+
+/* .title-box {
+  margin: 41px auto;
+  max-width: calc(100% - 400px);
+  box-shadow: 0 0 10px gold;
+}
+
+.movie-list {
+  margin: 28px auto;
+  max-width: calc(100% - 56px);
+  box-shadow: 0 0 10px gold;
+} */

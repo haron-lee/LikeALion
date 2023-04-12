@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    // DOM
+    document.write('hello');
+
+    // BOM
+    window.alert() //: 브라우저에 메세지 다이얼로그를 띄웁니다.
+    window.prompt() //: 브라우저에 사용자의 데이터를 입력받을 수 있는 입력 창을 띄웁니다.
+    // prompt는 입력값이 숫자여도 문자열로 받습니다.
+    window.confirm() //: true 혹은 false 값을 반환하는 다이얼로그를 띄웁니다.
+
+    console.log() //: 콘솔창에 로그 메세지를 보여줍니다.
+    console.log("%chello world", "color:red;font-size:32px");
+    console.log(
+      "%chello world%chello",
+      "color:red;font-size:32px",
+      "color:blue;font-size:16px"
+    );
+    //https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+    console.error() //: 콘솔창에 에러 메세지를 보여줍니다.
+
+    let data = {
+      a: 10,
+      b: 20,
+      c: 30
+    }
+
+    let data2 = [10, 20, 30]
+    console.table(data);
+    console.table(data2) //: 콘솔창에 데이터를 테이블 형태로 제공합니다.
+
+    // 콘솔창에 argument 데이터가 어떻게 구성되어있는지 자세히 보여준다.
+    console.dir(data);
+    console.dir(data2);
+
+    // 자주 사용 X
+    console.info("hello world");
+
+    // 자주 사용은 안되지만 한번 사용할 때 중요하게 사용되는 것
+    // 계층 구조 표현할 때 사용
+    console.group('위니브'); //부르고
+    console.group('경영지원');
+    console.log('대표/아이언맨');
+    console.log('자비스');
+    console.log('CDO/캡틴아메리카')
+    console.log('COO/토르');
+    console.groupEnd(); // end로 끝내야한다
+
+    console.group('개발')
+    console.log('FE');
+    console.log('BE');
+    console.log('Infra');
+    console.groupEnd();
+
+    console.group('디자인');
+    console.log('DE');
+    console.log('DE');
+    console.groupEnd();
+
+  </script>
+</body>
+
+</html>

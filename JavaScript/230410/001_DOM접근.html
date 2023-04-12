@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>hello</p>
+  <p>hello</p>
+  <p id="myTxt">hello</p>
+  <p class="txt1">hello</p>
+  <p class="txt1">hello</p>
+
+  <!-- <script>
+    // 📝 DOM 탐색
+    // 💡 DOM트리에 매달려있는 node 따오기
+    // 선택한 id 하나를 불러오기 (Only)
+    console.log(document.getElementById("myTxt"));
+    // p태그를 다 불러옴
+    console.log(document.getElementsByTagName("p"));
+    // 선택한 class를 다 불러온다 (선택된 클래스명 모두)
+    console.log(document.getElementsByClassName("txt1"));
+
+    console.log(document.querySelector());
+  </script> -->
+
+  점심 식단
+  <article id="container">
+    <ul>
+      <li>탕수육</li>
+      <li class="item-second">유산슬</li>
+      <li>짜장면</li>
+    </ul>
+  </article>
+  저녁 식단
+  <article>
+    <ul>
+      <li>된장국</li>
+      <li class="item-second">김치찌게</li>
+      <li>해장국</li>
+    </ul>
+  </article>
+  <script>
+    // 꼭 document를 쓸 필요는 없다.
+    // 🟧 부모 요소를 가져와서 부모 내에서 탐색
+    const container = document.getElementById("container");
+    // container 안의 li의 첫번째 요소
+    console.log(container.getElementsByTagName("li")[0]);
+
+    // 🟧 querySelector
+    // 특정 지어주지 않으면 가장 첫번째 요소를 가져온다.
+    console.log(container.querySelector("li"));
+    console.log(container.querySelector(".item-second"));
+    // container안의 마지막 li 가져오기 
+    console.log(container.querySelector("li:last-child"));
+
+    // 첫번째 li 탕수육 가져오기
+    // 점연산자는 키가 숫자로 시작하기에 사용할 수  없다.
+    console.log(document.getElementsByTagName("li")[0]);
+    // 🟧 item-second 클래스 중 첫번째 가져오기 [각괄호]
+    console.log(document.getElementByClassName("item-second")[0]);
+
+    // 🟧 요소 생성하고 자식요소로 넣기 
+    const listItem = document.createElement("li");
+    container.append(listItem);
+    console.log(container.querySelectorAll("li"));
+
+    // 🟧 삭제하기 
+    const target = document.querySelector(".item-second");
+    target.remove();
+
+    // 🟧 컨텐츠 변경하기
+    // HTMLCollection과 NodeList 둘다 바뀌게 된다. NodeList는 요소안의 정보가 바뀔 때는 정적이지만 바뀐다. (완전 정적인 것은 아니다)
+    container.querySelector(".item-second").textContent = "라조기";
+
+    // 🟧 클래스 추가하기 
+    container.querySelector(".item-second").classList.add("new");
+  </script>
+
+</body>
+
+</html>

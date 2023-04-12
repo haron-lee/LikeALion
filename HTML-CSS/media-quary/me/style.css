@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.text {
+  width: 612px;
+}
+
+.text > *:not(.text-text) {
+  margin-bottom: 24px;
+}
+
+.text-title {
+  font-size: 70px;
+  font-weight: 400;
+}
+
+.text-strong {
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.text-text {
+  width: 330px;
+  padding-left: 5px;
+  line-height: 1.4;
+}
+
+.pic {
+  width: 480px;
+  height: 580px;
+}
+.img-puppy a,
+.img-dingo a {
+  width: 480px;
+  height: 280px;
+  padding: 40px;
+  box-sizing: border-box;
+  background-size: cover;
+  border-radius: 20px;
+  overflow: hidden;
+  color: white;
+  font-weight: 300;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.img-puppy p:first-child,
+.img-dingo p:first-child {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.img-puppy .btn-action,
+.img-dingo .btn-action {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.btn-action::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: white;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: 23px;
+  bottom: 16.7%;
+}
+
+.img-puppy a {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://cdn.imweb.me/upload/S201807025b39d1981b0b0/5cac274d00b12.jpg");
+  margin-bottom: 20px;
+}
+
+.img-dingo a {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("http://www.hmap.co.kr/upload/editor/1538997268_xEG_African_Wild_Dogs.jpg");
+}
+
+@media (391px <= width <= 1240px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 768px;
+    box-sizing: border-box;
+    gap: 60px;
+  }
+
+  .pic {
+    width: 708px;
+    /* auto를 주니 스크롤바 사라짐! */
+    height: auto;
+    display: flex;
+    gap: 10px;
+  }
+
+  .img-puppy a,
+  .img-dingo a {
+    width: 344px;
+    height: 198px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .img-puppy p:first-child,
+  .img-dingo p:first-child {
+    font-size: 24px;
+  }
+
+  .btn-action {
+    font-size: 16px;
+  }
+
+  .btn-action::after {
+    bottom: 18%;
+    right: 17px;
+  }
+}
+
+@media (width <= 390px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 768px;
+    box-sizing: border-box;
+    gap: 60px;
+  }
+
+  .pic {
+    width: 708px;
+    /* auto를 주니 스크롤바 사라짐! */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .img-puppy a,
+  .img-dingo a {
+    width: 344px;
+    height: 198px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .img-puppy p:first-child,
+  .img-dingo p:first-child {
+    font-size: 24px;
+  }
+
+  .btn-action {
+    font-size: 16px;
+  }
+
+  .btn-action::after {
+    bottom: 18%;
+    right: 17px;
+  }
+}

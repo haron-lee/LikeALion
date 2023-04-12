@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+  <style>
+    ul {
+      display: flex;
+      gap: 100px;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 20px auto;
+      /* display: flex; */
+      /* flex-wrap: wrap; */
+      gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    article {
+      width: 300px;
+    }
+
+    img {
+      width: 300px;
+      vertical-align: top;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li>about</li>
+      <li>product</li>
+      <li>contact</li>
+    </ul>
+  </nav>
+  <script>
+    // step6
+    fetch("http://test.api.weniv.co.kr/mall")
+      .then((data) => data.json())
+      .then((data) => {
+        const main = document.createElement("main");
+        data.forEach((item) => {
+          // console.log("https://test.api.weniv.co.kr/" + item.thumbnailImg);
+
+          const productCard = document.createElement("article");
+          const productImg = document.createElement("img");
+          const productName = document.createElement("h2");
+          const productPrice = document.createElement("p");
+
+          productName.textContent = item.productName;
+          productPrice.textContent = item.price;
+          productImg.setAttribute(
+            "src",
+            "https://test.api.weniv.co.kr/" + item.thumbnailImg
+          );
+          productCard.appendChild(productImg);
+          productCard.appendChild(productName);
+          productCard.appendChild(productPrice);
+
+          main.appendChild(productCard);
+        });
+        document.body.appendChild(main);
+      });
+
+  </script>
+</body>
+
+</html>

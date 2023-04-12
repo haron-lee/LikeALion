@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Video</title>
+  <style>
+    .full-screen-vid {
+      position: fixed;
+      /* 중심으로 이동시키기 */
+      top: 50%;
+      left: 50%;
+      /* min-width: 100%; */
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0.3;
+    }
+  </style>
+</head>
+
+<body>
+  <video class="full-screen-vid" autoplay muted loop src="video/nextlevel.mp4"></video>
+</body>
+
+</html>
