@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <button id="btn1">클릭해봐요!</button>
+  <button id="btn2">클릭해봐요!</button>
+  <script>
+    let myObj = {
+      val1: 100,
+      func1: function () {
+        console.log(this);
+      },
+    };
+
+    let test = myObj.func1;
+
+    let button1 = document.getElementById("btn1");
+    button1.addEventListener("click", myObj.func1);
+    // myObj.func1이 button안으로 들어가게 되어서 button이 호출하게 되어 this는 button이 된다. 
+    // button1.myObj.func1이 틀린 이유는 이럴경우 myObj가 this가 되기 때문이다. 
+    // myObj.func1에서 가리키고 있는 함수를 button1이 클릭 되었을 때 button1이 직접 실행하게 되었다.
+
+    let button2 = document.getElementById("btn2");
+    button2.addEventListener("click", test);
+  </script>
+</body>
+
+</html>
