@@ -1,0 +1,133 @@
+#app {
+  width: 100vw;
+  height: 100vh;
+  perspective: 1600px;
+}
+
+.list-item {
+  position: fixed;
+  width: 340px;
+  height: 400px;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(0deg);
+  -webkit-transform: translate(-50%, -50%) rotateX(0deg);
+  -moz-transform: translate(-50%, -50%) rotateX(0deg);
+  -ms-transform: translate(-50%, -50%) rotateX(0deg);
+  -o-transform: translate(-50%, -50%) rotateX(0deg);
+  transform-style: preserve-3d;
+  /* 자식들을 3D로 유지하기 위함 */
+}
+
+.list-item li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #bdbdbd;
+  list-style: none;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  /* 뒤에 있는 아이템을 안보이게 하는 것 */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* 반지름 공식 : 원의 둘레 /2 / 3.14 */
+/* 원의 둘레 : 이미지 가로 * 개수 */
+
+.list-item li:nth-child(1) {
+  transform: rotateY(0) translateZ(calc((340px * 7) / 2 / 3.14));
+  -webkit-transform: rotateY(0) translateZ(calc((340px * 7) / 2 / 3.14));
+  -moz-transform: rotateY(0) translateZ(calc((340px * 7) / 2 / 3.14));
+  -ms-transform: rotateY(0) translateZ(calc((340px * 7) / 2 / 3.14));
+  -o-transform: rotateY(0) translateZ(calc((340px * 7) / 2 / 3.14));
+}
+
+.list-item li:nth-child(2) {
+  transform: rotateY(calc(360deg / 7)) translateZ(calc((340px * 7) / 2 / 3.14));
+  -webkit-transform: rotateY(calc(360deg / 7))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -moz-transform: rotateY(calc(360deg / 7))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -ms-transform: rotateY(calc(360deg / 7))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -o-transform: rotateY(calc(360deg / 7))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+}
+
+.list-item li:nth-child(3) {
+  transform: rotateY(calc((360deg / 7) * 2))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -webkit-transform: rotateY(calc((360deg / 7) * 2))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -moz-transform: rotateY(calc((360deg / 7) * 2))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -ms-transform: rotateY(calc((360deg / 7) * 2))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -o-transform: rotateY(calc((360deg / 7) * 2))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+}
+
+.list-item li:nth-child(4) {
+  transform: rotateY(calc((360deg / 7) * 3))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -webkit-transform: rotateY(calc((360deg / 7) * 3))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -moz-transform: rotateY(calc((360deg / 7) * 3))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -ms-transform: rotateY(calc((360deg / 7) * 3))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -o-transform: rotateY(calc((360deg / 7) * 3))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+}
+
+.list-item li:nth-child(5) {
+  transform: rotateY(calc((360deg / 7) * 4))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -webkit-transform: rotateY(calc((360deg / 7) * 4))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -moz-transform: rotateY(calc((360deg / 7) * 4))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -ms-transform: rotateY(calc((360deg / 7) * 4))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -o-transform: rotateY(calc((360deg / 7) * 4))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+}
+
+.list-item li:nth-child(6) {
+  transform: rotateY(calc((360deg / 7) * 5))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -webkit-transform: rotateY(calc((360deg / 7) * 5))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -moz-transform: rotateY(calc((360deg / 7) * 5))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -ms-transform: rotateY(calc((360deg / 7) * 5))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -o-transform: rotateY(calc((360deg / 7) * 5))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+}
+
+.list-item li:nth-child(7) {
+  transform: rotateY(calc((360deg / 7) * 6))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -webkit-transform: rotateY(calc((360deg / 7) * 6))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -moz-transform: rotateY(calc((360deg / 7) * 6))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -ms-transform: rotateY(calc((360deg / 7) * 6))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+  -o-transform: rotateY(calc((360deg / 7) * 6))
+    translateZ(calc((340px * 7) / 2 / 3.14));
+}
+
+.list-item img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
