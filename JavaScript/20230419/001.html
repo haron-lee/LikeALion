@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+
+  <script>
+    function foodPicker(foods) {
+      this.foods = foods;
+
+      this.pick = function () {
+        const randomIndex = Math.floor(Math.random() * this.foods.length);
+        console.log(this.foods[randomIndex]);
+      }
+    }
+
+    const foods = ['짜장면', '청국장', '김치찌개'];
+    const foodPicker = new foodPicker(foods);
+    foodPicker.pick(); 
+  </script>
+</body>
+
+</html>
