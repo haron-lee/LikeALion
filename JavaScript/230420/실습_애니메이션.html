@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>박스 키보드로 움직이기</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      margin: 300px auto;
+      background: orangered;
+      transition: .2s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+
+  <script>
+    const box = document.querySelector('.box');
+    let x = 0;
+    let y = 0;
+
+    function moveBox() {
+      box.style.transform = `translate(${x}px, ${y}px)`;
+      requestAnimationFrame(moveBox);
+    }
+
+    function handleKeyDown(e) {
+      if (e.key === 'ArrowLeft') x -= 20;
+      if (e.key === 'ArrowRight') x += 20;
+      if (e.key === 'ArrowUp') y -= 20;
+      if (e.key === 'ArrowDown') y += 20;
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    moveBox();
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>박스 움직이기</title>
+  <style>
+    div {
+      width: 50px;
+      height: 50px;
+      background: pink;
+      border: 1px solid black;
+      /* transition: .2s; */
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+
+  <script>
+    const target = document.querySelector('div');
+    let pos = 0;
+    // 사용자가 어떤 키를 눌렀는지 정보를 저장하는 객체
+    let keys = {};
+
+    // 사용자가 키에서 손을 뗄 때 실행
+    function move(event) {
+      keys[event.key] = false;
+    }
+
+    // 사용자가 키에서 손을 뗄 때 실행
+    function stop(event) {
+      keys[event.key] = false;
+      console.log(keys);
+    }
+
+    document.addEventListener('keydown', move);
+    document.addEventListener('keyup', stop);
+    // document.addEventListener('keydown', move);
+
+    // function move(event) {
+    //   const keyName = event.key; // 가져오는 키보드값
+
+    //   if (keyName === 'ArrowRight') {
+    //     pos += 5;
+    //     target.style.transform = `translateX(${pos}px)`;
+    //   } else if (keyName === 'ArrowLeft') {
+    //     pos -= 5;
+    //     target.style.transform = `translateX(${pos}px)`;
+    //   }
+    // }
+
+    function play() {
+      // keys.ArrowRight = true 면
+      if (keys.ArrowRight) {
+        pos += 5;
+        target.style.transform = `translateX(${pos}px)`;
+      }
+
+      if (keys.ArrowLeft) {
+        pos += 5;
+        target.style.transform = `translateX(${pos}px)`;
+      }
+
+      // 함수의 전달인자로 play를 넣어줌으로써 브라우저의 변화가 있을 때 (다음프레임) 이 play함수가 실행 될 거라는 것을 미리 알려주게 된다.
+
+      //* 사용자 요청에 빠르게 대답해야할 경우 (고성능)
+      requestAnimationFrame(play);
+    }
+
+    play();
+
+  </script>
+</body>
+
+</html>
