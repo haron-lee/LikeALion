@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+  <p>hello lions!!</p>
+  <button type="button">통신버튼</button>
+  <script>
+    // 자바스크립트는 기본적으로 동기적으로 실행이 된다. 
+    // 콜백함수는 비동기이다. 
+
+    const btn = document.querySelector("button");
+    // btn.addEventListener("click", xhrRequest);
+    let result;
+
+    // xhrRequest 함수는 비동기적으로 실행되고있다. 
+    // console.log를 바깥과 안쪽을 실행해보았을 때, 안쪽이 아닌 바깥쪽 console.log가 먼저 실행되는 것을 볼 수 있었다. 
+
+    function xhrRequest() {
+      // 통신 객체 생성 
+      const xhr = new XMLHttpRequest();
+      // 요청의 초기화, 초기세팅 완료
+      xhr.open("GET", "message.txt")
+      xhr.onreadystatechange = () => {
+        // 클라이언트의 상태를 의미, 완료된 상태의 조건문
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // JSON 파일같은건 text 파일로 받아올때 사용
+          const result = xhr.responseText;
+
+          document.querySelector("p").textContent = result;
+        }
+      }
+      xhr.send();
+    }
+
+    xhrRequest();
+
+    console.log(result);
+  </script>
+</body>
+
+</html>
