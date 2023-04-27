@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- 리액트를 사용하기 위해 필요한 파일  -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <!-- DOM을 조작하는 코드가 들어있는 파일 , 렌더링쪽 많은 역할 -->
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <!-- 최신 문법이나 React 문법을 모든 웹에서 사용할 수 있게 컴파일링 해준다. -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <title>리액트 1분만에 추가해보기!</title>
+</head>
+
+<body>
+  <h1>내 html에 리액트 1분만에 추가해보기!</h1>
+  <p>단 1분만에 설치없이 리액트를 추가할 수 있다구요?</p>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // react 컴포넌트 정의하기
+    const el = React.createElement;
+
+    // 클래스형 컴포넌트
+    class HelloButton extends React.Component {
+      constructor(props) {
+        super(props);
+
+        this.state = { liked: false };
+      }
+
+      render() {
+        if (this.state.liked) {
+          return 'Hello World!';
+        }
+
+        return (
+          <button onClick={() => this.setState({ liked: true })}>
+            Hello
+          </button>
+        );
+      }
+    }
+
+    // DOM에 리액트 컴포넌트 랜더링하기
+    const domContainer = document.querySelector('#root');
+    // domContainer 안에 HelloButton 객체를 만들어 준다. 
+    ReactDOM.render(el(HelloButton), domContainer);
+  </script>
+</body>
+
+</html>
