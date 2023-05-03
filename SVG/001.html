@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>heart line</title>
+  <style>
+    path {
+      fill: none;
+      stroke: #ff9797;
+      stroke-width: 5px;
+      stroke-linecap: round;
+    }
+
+    #path1 {
+      /* 대시의 길이,  공백의 길이*/
+      stroke-dasharray: 1588;
+      /* 시작지점 */
+      animation: line1 3s infinite;
+    }
+
+    #path2 {
+      stroke-dasharray: 1277;
+      /* 시작지점 */
+      animation: line1 8s infinite;
+      animation-timing-function: ease-in;
+    }
+
+    @keyframes line1 {
+      from {
+        stroke-dashoffset: 1588;
+      }
+
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes line2 {
+      from {
+        stroke-dashoffset: 1277;
+      }
+
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <svg viewBox="0 0 1000 182" xmlns="http://www.w3.org/2000/svg">
+    <path id="path1"
+      d="M7 137.125C7 137.125 150.6 175.425 292.3 175.425C434 175.425 537.1 161.025 573.5 85.225C626.6 -25.375 460.9 52.325 500.5 89.025C514 101.525 527.5 0.625014 471.7 6.22501C426 10.825 426.2 56.125 434.1 79.525C451.8 132.525 497.9 168.025 590 175.425C682.1 182.825 829.2 120.425 993.1 120.425" />
+  </svg>
+
+  <svg width="542" height="155" viewBox="0 0 542 155" xmlns="http://www.w3.org/2000/svg">
+    <path id="path2"
+      d="M2 95.292H136.886L149.078 61.874L154.48 118.344L163.585 95.292H209.576L221.614 61.874L231.337 118.344L245.844 38.8217L255.567 153L279.797 2L294.304 122.676L306.342 61.874L317.917 95.292H375.945L388.138 118.344L398.324 57.0779L406.194 95.292H540" />
+  </svg>
+
+  <script>
+    const path1 = document.getElementById('path1');
+    const path2 = document.getElementById('path2');
+
+    console.log(path2.getTotalLength());
+  </script>
+</body>
+
+</html>

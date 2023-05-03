@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- 🔽 JS의 template literal 문법과 innerHTML만을 사용 -->
+    <!-- <script>
+        const root = document.querySelector('#root');
+        const header = '<div>header</div>';
+        const main = '<div>main</div>';
+        const product = '<div>product</div>';
+        const footer = '<div>footer</div>';
+
+        root.innerHTML =
+            `
+                ${header} 
+                ${main}
+                ${product}
+                ${footer}
+            `;
+    </script> -->
+    <script type="text/babel">
+
+        const header = <div>header</div>;
+        const main = <div>main</div>;
+        const product = <div>product</div>;
+        const footer = <div>footer</div>;
+
+        // JSX에서 코드의 개행이 필요할 경우 소괄호를 사용하여 묶습니다.
+        const body = (
+            <div>
+                {header}
+                {main}
+                {product}
+                {footer}
+            </div>
+        );
+
+        const domContainer = document.querySelector('#root');
+        // ReactDOM.createRoot 함수는 React 18부터 도입된 함수로, React 애플리케이션에서 루트 노드를 만들고, 그 루트 노드를 기반으로 리액트 앱을 렌더링하는 데 사용됩니다.
+        const root = ReactDOM.createRoot(domContainer);
+        root.render(body);
+
+    </script>
+</body>
+
+</html>
